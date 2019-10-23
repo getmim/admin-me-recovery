@@ -1,0 +1,28 @@
+<div class="page-login">
+    <div class="card">
+        <form class="card-body needs-validation main" method="POST" novalidate>
+            <h5 class="card-title">Reset Password</h5>
+
+            <?php if($success): ?>
+                <div class="alert alert-primary">
+                    Your password successfully updated.
+                </div>
+            <?php else: ?>
+                <p>Please put your new password.</p>
+                <?= $form->field('new-password'); ?>
+                <?= $form->field('retype-password'); ?>
+                <?= $form->csrfField('noob'); ?>
+
+                <div>
+                    <button class="btn btn-primary btn-block">Update</button>
+                </div>
+            <?php endif; ?>
+
+            <div class="row pt-3">
+                <div class="col-12 text-center">
+                    <a href="<?= $this->router->to('adminMeLogin') ?>">Back to login</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
